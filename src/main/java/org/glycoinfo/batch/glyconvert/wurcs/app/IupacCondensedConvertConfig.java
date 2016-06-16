@@ -7,6 +7,8 @@ import org.glycoinfo.batch.glyconvert.ConvertSelectSparql;
 import org.glycoinfo.batch.glyconvert.ConvertSparqlProcessor;
 import org.glycoinfo.batch.glyconvert.GlyConvertSparqlItemConfig;
 import org.glycoinfo.convert.GlyConvert;
+import org.glycoinfo.convert.wurcs.WurcsToIupacCondensedConverter;
+import org.glycoinfo.convert.wurcs.WurcsToIupacConverter;
 import org.glycoinfo.rdf.InsertSparql;
 import org.glycoinfo.rdf.SelectSparql;
 import org.glycoinfo.rdf.dao.SparqlEntity;
@@ -27,37 +29,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@EnableBatchProcessing
-@Import(GlyConvertSparqlItemConfig.class)
-public class IupacConvertJobConfig {
-
-  @Autowired
-  ConvertSparqlProcessor convertSparqlProcessor;
+@Import({VirtSesameTransactionConfig.class})
+public class IupacCondensedConvertConfig extends IupacConvertConfig {
 
 	// graph base to set the graph to insert into. The format type (toFormat())
 	// will be added to the end.
 	public static String graphbase = "http://rdf.glytoucan.org/sequence";
 
 	@Bean
-	public Job importUserJob(JobBuilderFactory jobs, Step s1) {
-//	  return jobs.get("ConvertWurcs").incrementer(new RunIdIncrementer()).flow(s1).end().build();
-	  return jobs.get("ConvertWurcs").incrementer(new RunIdIncrementer()).flow(s1).end().build();
+	GlyConvert getGlyConvert() {
+		return new WurcsToIupacConverter();
 	}
-
-	@Bean
-	public Step step1(StepBuilderFactory stepBuilderFactory, ItemReader<SparqlEntity> reader,
-			ItemWriter<SparqlEntity> writer, ItemProcessor<SparqlEntity, SparqlEntity> processor) {
-		return stepBuilderFactory.get("step1").<SparqlEntity, SparqlEntity> chunk(10).reader(reader)
-				.processor(processor).writer(writer).build();
-	}
-	
-  @Bean
-  public ItemProcessor<SparqlEntity, SparqlEntity> processor() {
-    return convertSparqlProcessor;
-  }
-  
-  @Bean
-  public ConvertSparqlProcessor convertSparqlProcessor() {
-    return new ConvertSparqlProcessor();
-  }
 }
