@@ -6,7 +6,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.glycoinfo.batch.glyconvert.ConvertSelectSparql;
-import org.glycoinfo.batch.glyconvert.SparqlItemConfig;
+import org.glycoinfo.batch.glyconvert.GlyConvertSparqlItemConfig;
 import org.glycoinfo.batch.glyconvert.wurcs.app.IupacConvertConfig;
 import org.glycoinfo.batch.glyconvert.wurcs.app.IupacConvertSparqlBatch;
 import org.glycoinfo.convert.util.DetectFormat;
@@ -62,7 +62,7 @@ import org.springframework.transaction.annotation.Transactional;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = { IupacConvertSparqlBeanTest.class, IupacConvertConfig.class, VirtSesameTransactionConfig.class, SparqlItemConfig.class })
+@SpringApplicationConfiguration(classes = { IupacConvertSparqlBeanTest.class, IupacConvertConfig.class, VirtSesameTransactionConfig.class, GlyConvertSparqlItemConfig.class })
 @Configuration
 @EnableAutoConfiguration
 @IntegrationTest
