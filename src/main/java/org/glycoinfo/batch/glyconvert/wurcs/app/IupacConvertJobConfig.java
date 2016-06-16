@@ -7,7 +7,6 @@ import org.glycoinfo.batch.glyconvert.ConvertSelectSparql;
 import org.glycoinfo.batch.glyconvert.ConvertSparqlProcessor;
 import org.glycoinfo.batch.glyconvert.SparqlItemConfig;
 import org.glycoinfo.convert.GlyConvert;
-import org.glycoinfo.convert.wurcs.WurcsToIUPACConverter;
 import org.glycoinfo.rdf.InsertSparql;
 import org.glycoinfo.rdf.SelectSparql;
 import org.glycoinfo.rdf.dao.SparqlEntity;
