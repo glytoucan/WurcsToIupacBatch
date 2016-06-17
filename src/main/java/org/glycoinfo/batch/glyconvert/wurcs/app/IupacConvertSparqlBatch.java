@@ -8,7 +8,6 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @ComponentScan(basePackages = ("org.glycoinfo.batch.rdf"))
-@EnableBatchProcessing
 public class IupacConvertSparqlBatch {
 	public static void main(String[] args) {
 		@SuppressWarnings("unused")
