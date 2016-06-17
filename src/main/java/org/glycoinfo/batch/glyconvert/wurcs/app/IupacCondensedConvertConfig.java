@@ -28,16 +28,16 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
-@Configuration
-@Import({VirtSesameTransactionConfig.class})
-public class IupacCondensedConvertConfig extends IupacConvertConfig {
-
-	// graph base to set the graph to insert into. The format type (toFormat())
-	// will be added to the end.
-	public static String graphbase = "http://rdf.glytoucan.org/sequence";
-
-	@Bean
-	GlyConvert getGlyConvert() {
-		return new WurcsToIupacConverter();
-	}
-}
+//@Configuration
+//@Import({VirtSesameTransactionConfig.class})
+//public class IupacCondensedConvertConfig extends IupacConvertConfig {
+//
+//	// graph base to set the graph to insert into. The format type (toFormat())
+//	// will be added to the end.
+//	public static String graphbase = "http://rdf.glytoucan.org/sequence";
+//
+//	@Bean
+//	GlyConvert getGlyConvert() {
+//		return new WurcsToIupacConverter();
+//	}
+//}
