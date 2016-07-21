@@ -31,9 +31,9 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.glycoinfo</groupId>
-			<artifactId>batch</artifactId>
-			<version>0.3.3-SNAPSHOT</version>
+          <groupId>org.glycoinfo</groupId>
+          <artifactId>batch</artifactId>
+          <version>0.3.4-SNAPSHOT</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>slf4j-log4j12</artifactId>
