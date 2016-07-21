@@ -1,0 +1,13 @@
+version: '2'
+services:
+  java:
+    image: maven:3.3.9-jdk-8
+    volumes:
+     - /etc/localtime:/etc/localtime
+     - ${HOME}/glytoucan/maven:/root/.m2
+     - ${WORKSPACE_PARENT}/${WORKSPACE}/${PROJECT}:/workspace
+    working_dir: /workspace/wurcstoiupacbatch
+    command: mvn -U -DskipTests=true -T 2C spring-boot:run
+    environment:
+     - SPRING_TRIPLESTORE_PASSWORD
+     - SPRING_TRIPLESTORE_URL

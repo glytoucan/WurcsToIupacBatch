@@ -36,7 +36,7 @@ public class IupacConvertConfig {
 	// will be added to the end.
 	public static String graphbase = "http://rdf.glytoucan.org/sequence";
 
-	@Bean
+  @Bean(name="org.glycoinfo.batch.glyconvert")
 	GlyConvert getGlyConvert() {
 		return new WurcsToIupacConverter();
 	}

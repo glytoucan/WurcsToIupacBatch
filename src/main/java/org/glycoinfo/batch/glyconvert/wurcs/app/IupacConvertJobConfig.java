@@ -28,7 +28,7 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @EnableBatchProcessing
-@Import(GlyConvertSparqlItemConfig.class)
+@Import({GlyConvertSparqlItemConfig.class})
 public class IupacConvertJobConfig {
 
   @Autowired
