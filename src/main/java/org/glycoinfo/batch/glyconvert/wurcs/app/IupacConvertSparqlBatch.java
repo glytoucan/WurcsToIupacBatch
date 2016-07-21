@@ -14,7 +14,6 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(excludeFilters={
     @ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, value=IupacCondensedConvertConfig.class)})
 @EnableAutoConfiguration
-@EnableBatchProcessing
 @Import(VirtSesameTransactionConfig.class)
 public class IupacConvertSparqlBatch {
 	public static void main(String[] args) {
