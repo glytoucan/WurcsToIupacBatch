@@ -8,7 +8,7 @@
 	<parent>
 		<groupId>org.glytoucan</groupId>
 		<artifactId>pom-site</artifactId>
-		<version>0.24-SNAPSHOT</version>
+		<version>1.2.1-SNAPSHOT</version>
 		<relativePath>../pom-site/pom.xml</relativePath>
 	</parent>
 	<dependencies>
@@ -31,27 +31,9 @@
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
 		<dependency>
-          <groupId>org.glycoinfo</groupId>
-          <artifactId>batch</artifactId>
-          <version>0.3.4-SNAPSHOT</version>
-			<exclusions>
-				<exclusion>
-					<artifactId>slf4j-log4j12</artifactId>
-					<groupId>org.slf4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j</artifactId>
-					<groupId>log4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j-api</artifactId>
-					<groupId>org.apache.logging.log4j</groupId>
-				</exclusion>
-				<exclusion>
-					<artifactId>log4j-core</artifactId>
-					<groupId>org.apache.logging.log4j</groupId>
-				</exclusion>
-			</exclusions>
+			<groupId>org.glycoinfo</groupId>
+			<artifactId>batch</artifactId>
+			<version>0.3.4-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.batch</groupId>
@@ -116,7 +98,7 @@
 		</snapshotRepository>
 		<site>
 			<id>glycoinfo-projects</id>
-			<url>dav:http://nexus.glycoinfo.org/content/sites/project/batch/</url>
+			<url>dav:http://nexus.glycoinfo.org/content/sites/project/wurcstoiupacbatch/</url>
 		</site>
 	</distributionManagement>
 	<properties>
@@ -125,7 +107,7 @@
 		<project.scm.url>https://github.com/glytoucan/wurcstoiupacbatch</project.scm.url>
 		<cobertura.base.package>org.glycoinfo.batch.glyconvert.wurcs</cobertura.base.package>
 		<inceptionYear>2014</inceptionYear>
-		<repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/batch.glyconvert.wurcs</repository.domain>
+		<repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/batch/glyconvert/wurcs/iupac</repository.domain>
 		<repository.user>glytoucan</repository.user>
 		<repository.name>wurcstoiupacbatch</repository.name>
 		<googleAnalyticsAccountId>UA-54566807-1</googleAnalyticsAccountId>
