@@ -29,7 +29,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@Import({VirtSesameTransactionConfig.class})
 public class IupacConvertConfig {
 
 	// graph base to set the graph to insert into. The format type (toFormat())
