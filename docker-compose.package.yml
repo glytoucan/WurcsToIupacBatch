@@ -1,0 +1,10 @@
+version: '2'
+services:
+  iupac:
+    image: aokinobu/java-release
+    volumes:
+      - ${PWD}:/iupac-batch
+    environment:
+      - PROJECT_NAME=iupac-batch
+      - PROJECT_FILE=iupac
+      - VERSION_NUMBER=0.0.1-SNAPSHOT
