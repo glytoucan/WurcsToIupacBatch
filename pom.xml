@@ -61,17 +61,17 @@
 	</build>
 	<repositories>
 		<repository>
-			<id>spring-releases</id>
-			<url>http://repo.spring.io/libs-release</url>
+			<id>bintray</id>
+			<name>bintray</name>
+			<url>http://jcenter.bintray.com</url>
 		</repository>
 		<repository>
 			<id>glycoinfo</id>
 			<url>http://nexus.glycoinfo.org/content/groups/public</url>
 		</repository>
 		<repository>
-			<id>bintray</id>
-			<name>bintray</name>
-			<url>http://jcenter.bintray.com</url>
+			<id>spring-releases</id>
+			<url>http://repo.spring.io/libs-release</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
