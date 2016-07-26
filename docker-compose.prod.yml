@@ -1,7 +1,7 @@
 version: '2'
 services:
   iupacpackage:
-    image: glycoinfo.org:5000/iupac_batch:v${IUPAC_VERSION}
+    image: glycoinfo.org:5000/iupac_batch:${IUPAC_VERSION}
     command: echo "iupac package ready"
     volumes:
       - /data
