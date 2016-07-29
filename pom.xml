@@ -105,18 +105,18 @@
 		</snapshotRepository>
 		<site>
 			<id>glycoinfo-projects</id>
-			<url>dav:http://nexus.glycoinfo.org/content/sites/project/wurcstoiupacbatch/</url>
+			<url>dav:http://nexus.glycoinfo.org/content/sites/project/WurcsToIupacBatch/</url>
 		</site>
 	</distributionManagement>
 	<properties>
 		<changelog.fileUri>${changelog.github.fileUri}</changelog.fileUri>
 		<changelog.revision.fileUri>${changelog.revision.github.fileUri}</changelog.revision.fileUri>
-		<project.scm.url>https://github.com/glytoucan/wurcstoiupacbatch</project.scm.url>
+		<project.scm.url>https://github.com/glytoucan/WurcsToIupacBatch</project.scm.url>
 		<cobertura.base.package>org.glycoinfo.batch.glyconvert.wurcs</cobertura.base.package>
 		<inceptionYear>2014</inceptionYear>
 		<repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/batch/glyconvert/wurcs/iupac</repository.domain>
 		<repository.user>glytoucan</repository.user>
-		<repository.name>wurcstoiupacbatch</repository.name>
+		<repository.name>WurcsToIupacBatch</repository.name>
 		<googleAnalyticsAccountId>UA-54566807-1</googleAnalyticsAccountId>
 	</properties>
 	<dependencyManagement>
