@@ -1,4 +1,4 @@
-package org.glycoinfo.batch.glyconvert.wurcs.app;
+package org.glycoinfo.batch.glyconvert.wurcs.iupac;
 
 import org.glycoinfo.batch.glyconvert.ConvertSparqlProcessor;
 import org.glycoinfo.batch.glyconvert.GlyConvertSparqlItemConfig;
@@ -23,8 +23,8 @@ import org.springframework.context.annotation.Import;
 @Import({VirtSesameTransactionConfig.class, GlyConvertSparqlItemConfig.class})
 public class IupacConvertJobConfig {
 
-  @Autowired
-  ConvertSparqlProcessor convertSparqlProcessor;
+//  @Autowired
+//  ConvertSparqlProcessor convertSparqlProcessor;
 
 	// graph base to set the graph to insert into. The format type (toFormat())
 	// will be added to the end.
@@ -43,13 +43,13 @@ public class IupacConvertJobConfig {
 				.processor(processor).writer(writer).build();
 	}
 	
-  @Bean
-  public ItemProcessor<SparqlEntity, SparqlEntity> processor() {
-    return convertSparqlProcessor;
-  }
-  
-  @Bean
-  public ConvertSparqlProcessor convertSparqlProcessor() {
-    return new ConvertSparqlProcessor();
-  }
+//  @Bean
+//  public ItemProcessor<SparqlEntity, SparqlEntity> processor() {
+//    return convertSparqlProcessor;
+//  }
+//  
+//  @Bean
+//  public ConvertSparqlProcessor convertSparqlProcessor() {
+//    return new ConvertSparqlProcessor();
+//  }
 }

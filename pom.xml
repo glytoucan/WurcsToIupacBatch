@@ -132,4 +132,21 @@
 		</dependencies>
 	</dependencyManagement>
 	<url>http://${repository.domain}/${repository.user}/${repository.name}/</url>
+	<profiles>
+        <profile>
+            <id>extended</id>
+            <activation>
+                <activeByDefault />
+            </activation>
+            <properties>
+                <spring.mainClass>org.glycoinfo.batch.glyconvert.wurcs.iupac.extended.IupacConvertSparqlBatch</spring.mainClass>
+            </properties>
+        </profile>
+        <profile>
+            <id>condensed</id>
+            <properties>
+                <spring.mainClass>org.glycoinfo.batch.glyconvert.wurcs.iupac.condensed.IupacCondensedConvertSparqlBatch</spring.mainClass>
+            </properties>
+        </profile>
+    </profiles>
 </project>
