@@ -1,13 +1,18 @@
 version: '2'
 services:
-  iupacpackage:
-    image: glycoinfo.org:5000/iupac_batch:${IUPAC_VERSION}
-    command: echo "iupac package ready"
+  data:
+    image: glycoinfo.org:5000/${PROJECT_NAME}:${BATCH_VERSION}
+    command: echo "binaries ready"
     volumes:
       - /data
-  iupac:
+  batch:
     image: java:8u91-jdk
     working_dir: /data
-    command: java -jar iupac-${IUPAC_VERSION}.jar
+    command: java -jar ${PROJECT_NAME}-${BATCH_VERSION}.jar
+    volumes:
+      - /home/jenkins/batch/${PROJECT_NAME}:/root/batch/${PROJECT_NAME}
     volumes_from:
-      - iupacpackage
+      - data
+    environment:
+      - PROJECT=${PROJECT_NAME}
+      - HOME=/root/batch/${PROJECT_NAME}
