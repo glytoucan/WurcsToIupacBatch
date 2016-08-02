@@ -1,0 +1,9 @@
+logging:
+  path: ${HOME}/glytoucan/${PROJECT}/logs
+  level:
+    org.glycoinfo: WARN
+    org.glytoucan: WARN
+wurcs:
+  graph:
+    target: <http://rdf.glytoucan.org/sequence/wurcs>
+    ms: <http://rdf.glytoucan.org/wurcs/ms>
