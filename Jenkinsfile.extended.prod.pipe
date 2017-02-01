@@ -1,0 +1,26 @@
+node {
+PROJECT_NAME="iupac_extended"
+BATCH_VERSION="0.0.1-SNAPSHOT"
+
+if (env.UPDATE != null) {
+stage 'git'
+git 'https://github.com/glytoucan/WurcsToIupacBatch.git'
+//   }
+stage 'docker rm'
+sh 'docker-compose -f docker-compose.prod.yml rm -f'
+
+stage 'docker pull'
+sh 'BATCH_VERSION=' + BATCH_VERSION + ' PROJECT_NAME=' + PROJECT_NAME + ' docker-compose -f docker-compose.prod.yml pull'
+}
+
+stage 'run batch'
+sh 'echo BATCH_VERSION=' + BATCH_VERSION + ' PROJECT_NAME=iupac docker-compose -f docker-compose.prod.yml up --remove-orphans'
+sh 'BATCH_VERSION=' + BATCH_VERSION + ' PROJECT_NAME=iupac docker-compose -f docker-compose.prod.yml up --remove-orphans'
+
+stage 'rm batch'
+sh 'echo BATCH_VERSION=' + BATCH_VERSION + ' PROJECT_NAME=iupac docker-compose -f docker-compose.prod.yml rm -f --all'
+sh 'BATCH_VERSION=' + BATCH_VERSION + ' PROJECT_NAME=iupac docker-compose -f docker-compose.prod.yml rm -f --all'
+
+stage 'rm dangling volumes'
+sh 'docker volume ls -qf dangling=true | xargs -r docker volume rm'
+}
